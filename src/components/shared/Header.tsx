@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import SideMenu from "./SideMenu";
 import { useParams, usePathname } from "next/navigation";
 import { usePath } from "@/hooks/usePath";
+import { headerContainerVariants } from "@/lib/animation";
 
 const Header = () => {
   const params = usePath()
@@ -21,7 +22,7 @@ const Header = () => {
 
   if (device === 0) {
   return (
-    <div className="m-5 mb-1">
+    <motion.div variants={headerContainerVariants} initial="hidden" animate="visible" className="m-5 mb-1">
       <div className="sticky top-5 z-10 bg-primary/90 backdrop-blur max-w-6xl text-white rounded-4xl p-2 my-4 mb-3 mx-4 [@media(min-width:1178px)]:mx-auto">
         <div className="flex justify-between items-center animate-pulse">
 
@@ -42,7 +43,7 @@ const Header = () => {
           <div className="h-8 w-24 rounded-4xl bg-white/30" />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -85,7 +86,7 @@ const Header = () => {
         </header>
       ) : (
         <>
-          <header className="sticky top-0 z-10 bg-primary/98 text-white p-3 flex justify-between items-center">
+          <motion.header variants={headerContainerVariants} initial="hidden" animate="visible" className="sticky top-0 z-10 bg-primary/98 text-white p-3 flex justify-between items-center">
             <div className="flex justify-center items-center gap-3">
               <div onClick={onToggle}>
                 {!isOpen ? <Menu size={21} /> : <X size={21} />}
@@ -97,7 +98,7 @@ const Header = () => {
             <button className="bg-white text-primary rounded-4xl p-1.5 px-3 text-sm font-medium hover:bg-secondary">
               Contact Me
             </button>
-          </header>
+          </motion.header>
           <SideMenu open={isOpen} setOpen={setIsOpen}/>
         </>
       )}
