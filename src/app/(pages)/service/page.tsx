@@ -1,44 +1,73 @@
 'use client'
-import { Typography } from "@/components/ui/typography";
-import { SERVICES } from "@/lib/data";
-import { Minus } from "lucide-react";
-import { motion } from "framer-motion";
-import { heroContainerVariants, heroImageContainerVariants } from "@/lib/animation";
+import { Typography } from '@/components/ui/typography'
+import { SERVICES } from '@/lib/data'
+import { motion } from 'framer-motion'
+import {
+  ArrowRight, Code2, Cpu, Database, Globe,
+  Layers, LineChart, Settings, Smartphone, Zap,
+} from 'lucide-react'
 
-export function Service() {
+const SERVICE_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  strategy:  LineChart,
+  mvp:       Zap,
+  'web-app': Globe,
+  mobile:    Smartphone,
+  backend:   Database,
+  scaling:   Cpu,
+  support:   Settings,
+  ui:        Layers,
+  consulting: Code2,
+}
+
+export default function Service() {
   return (
-   <div className="py-10 bg-muted">
-   <div className="max-w-6xl p-2 mx-auto">
-    <div className="flex justify-center items-center font-medium"><Minus className="text-secondary mr-1"/>{" "} Services</div>
-    <div className="flex justify-center items-center font-medium mt-2 mb-10">
-     <Typography variant={'h3'}><span className="text-secondary font-light">Services</span> I Provide</Typography>  
-     {/* Card  */}
-    </div>
-  <motion.div
-  className="flex flex-wrap justify-center gap-6"
-  variants={heroContainerVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
->
-  {SERVICES.map((services, index) => (
-    <motion.div
-      key={index}
-      variants={heroImageContainerVariants}
-      className="bg-white border p-4 w-[260px] h-[210px] border-[1.4px] rounded-xl"
-    >
-      <div className="w-16 h-16 rounded-full bg-gray-100" />
-      <Typography variant={"h5"} className="text-primary/96 font-bold my-2">
-        {services?.title}
-      </Typography>
-      <Typography variant={"small"}>
-        {services?.description}
-      </Typography>
-    </motion.div>
-  ))}
-</motion.div>
+    <section className="py-28 bg-background">
+      <div className="max-w-6xl mx-auto px-6">
 
-   </div>   
-   </div>   
-  )  
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <span className="text-primary text-xs font-medium tracking-[0.2em] uppercase">What I Do</span>
+          <Typography variant="h2" className="mt-3 text-4xl md:text-5xl font-black">
+            Services I <span className="text-primary">Provide</span>
+          </Typography>
+        </motion.div>
+
+        {/* Services grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {SERVICES.map((service, index) => {
+            const Icon = SERVICE_ICONS[service.icon] ?? Code2
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ delay: index * 0.07, duration: 0.5 }}
+                className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-[0_0_30px_oklch(0.65_0.2_145/0.07)] transition-all duration-300 cursor-default"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_12px_oklch(0.65_0.2_145/0.2)] transition-all">
+                  <Icon size={20} className="text-primary" />
+                </div>
+                <Typography variant="h5" className="text-foreground mb-2">
+                  {service.title}
+                </Typography>
+                <Typography variant="small" className="text-muted-foreground leading-relaxed">
+                  {service.description}
+                </Typography>
+                <div className="flex items-center gap-1.5 text-primary text-xs mt-5 font-medium opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200">
+                  Learn more <ArrowRight size={12} />
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -1,32 +1,35 @@
-import { Typography } from "@/components/ui/typography";
-import { Play } from "lucide-react";
-import HeroSection from "./(pages)/home/page";
-import { Service } from "./(pages)/service/page";
-import About from "./(pages)/about/page";
+import HeroSection from './(pages)/home/page'
+import About from './(pages)/about/page'
+import Experience from './(pages)/experience/page'
+import Projects from './(pages)/projects/page'
+import Skills from './(pages)/skills/page'
+import Service from './(pages)/service/page'
+import Contact from './(pages)/contact/page'
 
 export default function Home() {
   return (
-   <div className="scrollbar-hide">
-    <div id="home" className="scroll-mt-20">
-     <HeroSection/>
-     </div>     
-
-    <div id="services" className="scroll-mt-20">
-     <Service/> 
-    </div> 
-
-    <div id="about" className="scroll-mt-20">
-     <About/> 
-    </div> 
-
-    <div id="projects" className="scroll-mt-20 h-[510px] bg-green-100">
-     Projects
-    </div> 
-
-    <div id="blogs" className="scroll-mt-20 h-[510px] bg-blue-100">
-     Blogs
-    </div> 
-
-   </div>
-  );
+    <main>
+      <div id="home">
+        <HeroSection />
+      </div>
+      <div id="about" className="scroll-mt-20">
+        <About />
+      </div>
+      <div id="experience" className="scroll-mt-20">
+        <Experience />
+      </div>
+      <div id="projects" className="scroll-mt-20">
+        <Projects />
+      </div>
+      <div id="skills" className="scroll-mt-20">
+        <Skills />
+      </div>
+      <div id="services" className="scroll-mt-20">
+        <Service />
+      </div>
+      <div id="contact" className="scroll-mt-20">
+        <Contact />
+      </div>
+    </main>
+  )
 }
