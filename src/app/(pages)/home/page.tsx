@@ -9,27 +9,27 @@ const HeroCanvas = dynamic(() => import('@/components/three/HeroCanvas'), { ssr:
 
 const TECH_STACK = ['React', 'Next.js', 'TypeScript', 'React Native', 'Node.js', 'Electron.js', 'PostgreSQL']
 
+const TICKER_ITEMS = [
+  'React', 'Next.js', 'TypeScript', 'React Native', 'Electron.js', 'Node.js',
+  'PostgreSQL', 'Zustand', 'Tanstack Query', 'ShadCN UI', 'Tailwind CSS',
+  'MUI', 'Redux', 'Framer Motion', 'Git', 'Jest', 'REST APIs', 'Agile',
+]
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
 
-      {/* Three.js background */}
       <HeroCanvas />
-
-      {/* Dot grid texture */}
       <div className="absolute inset-0 z-1 dot-grid opacity-[0.18] pointer-events-none" />
-
-      {/* Central radial glow — wider since content is centered */}
       <div className="absolute inset-0 z-1 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/7 blur-[130px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-secondary/5 blur-[60px]" />
       </div>
 
-      {/* ── Main content — full-width centered ── */}
+      {/* ── Main content ── */}
       <div className="relative z-2 flex-1 flex items-center justify-center w-full px-6 pt-28 pb-20">
         <div className="max-w-4xl w-full text-center">
 
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,6 @@ export default function HeroSection() {
             Open to work
           </motion.div>
 
-          {/* Name — the visual centrepiece */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,7 +49,6 @@ export default function HeroSection() {
             KAVI K
           </motion.h1>
 
-          {/* Title */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,7 +61,6 @@ export default function HeroSection() {
             </span>
           </motion.h2>
 
-          {/* Tagline */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,7 +70,6 @@ export default function HeroSection() {
             Building scalable web, mobile &amp; desktop products that ship.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,7 +92,6 @@ export default function HeroSection() {
             </a>
           </motion.div>
 
-          {/* Tech stack pills */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,7 +122,10 @@ export default function HeroSection() {
       >
         <div className="max-w-4xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4">
           {STATS.map((stat, i) => (
-            <div key={stat.label} className={`text-center py-3 ${i < STATS.length - 1 ? 'md:border-r border-border/40' : ''}`}>
+            <div
+              key={stat.label}
+              className={`text-center py-3 ${i < STATS.length - 1 ? 'md:border-r border-border/40' : ''}`}
+            >
               <p className="font-heading font-black text-3xl text-primary text-glow">
                 <CountUp to={stat.numericValue} suffix={stat.suffix} />
               </p>
@@ -137,20 +135,26 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* ── Scrolling tech ticker ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-[88px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-2"
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="relative z-2 border-t border-border/30 bg-background/50 backdrop-blur-sm py-3 overflow-hidden"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
-          className="w-5 h-9 border border-border/60 rounded-full flex justify-center pt-1.5"
-        >
-          <div className="w-1 h-2.5 bg-primary rounded-full" />
-        </motion.div>
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
+        <div className="flex animate-ticker whitespace-nowrap will-change-transform">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-4 text-[10px] text-muted-foreground/45 font-mono tracking-[0.22em] uppercase px-6"
+            >
+              {item}
+              <span className="text-primary/25 text-[8px]">◆</span>
+            </span>
+          ))}
+        </div>
       </motion.div>
     </section>
   )

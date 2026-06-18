@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Typography } from '@/components/ui/typography'
 import { PERSONAL_INFO } from '@/lib/data'
-import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Mail, Phone, MapPin, ExternalLink as LinkedInIcon, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { fadeInLeft, fadeInRight } from '@/lib/animation'
 
 const CONTACT_LINKS = [
@@ -26,7 +26,7 @@ const CONTACT_LINKS = [
     href: undefined,
   },
   {
-    icon: Linkedin,
+    icon: LinkedInIcon,
     label: 'LinkedIn',
     value: 'kavi-k-41ab8224b',
     href: PERSONAL_INFO.linkedin,
@@ -80,20 +80,26 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="mb-20"
         >
-          <span className="inline-block text-primary text-xs font-semibold tracking-[0.25em] uppercase bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-4">
-            Get In Touch
-          </span>
-          <h2 className="font-heading font-black text-4xl md:text-5xl mt-2">
-            Let&apos;s{' '}
-            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Connect
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-xs text-primary/50 tracking-[0.35em] uppercase">06 /</span>
+            <div className="flex-1 h-px bg-border/50" />
+            <span className="text-primary text-xs font-semibold tracking-[0.25em] uppercase bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full">
+              Get In Touch
             </span>
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto text-sm leading-relaxed">
-            Have a project in mind or want to collaborate? I&apos;d love to hear from you.
-          </p>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+            <h2 className="font-heading font-black text-5xl md:text-6xl leading-none">
+              Let&apos;s{' '}
+              <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Connect
+              </span>
+            </h2>
+            <p className="text-muted-foreground text-sm max-w-xs leading-relaxed md:text-right">
+              Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+            </p>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">

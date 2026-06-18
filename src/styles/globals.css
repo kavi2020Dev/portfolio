@@ -137,3 +137,15 @@
     linear-gradient(135deg, oklch(0.65 0.2 145), oklch(0.82 0.17 85)) border-box;
   border: 1px solid transparent;
 }
+
+/* Scrolling ticker marquee */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 35s linear infinite;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
+}

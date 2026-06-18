@@ -30,12 +30,16 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="mb-14"
         >
-          <span className="inline-block text-primary text-xs font-semibold tracking-[0.25em] uppercase bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-4">
-            Tech Stack
-          </span>
-          <h2 className="font-heading font-black text-4xl md:text-5xl mt-2">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-xs text-primary/50 tracking-[0.35em] uppercase">04 /</span>
+            <div className="flex-1 h-px bg-border/50" />
+            <span className="text-primary text-xs font-semibold tracking-[0.25em] uppercase bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full">
+              Tech Stack
+            </span>
+          </div>
+          <h2 className="font-heading font-black text-5xl md:text-6xl leading-none">
             Skills &amp;{' '}
             <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               Technologies
