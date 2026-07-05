@@ -13,6 +13,7 @@ export const PERSONAL_INFO = {
   phone: "+91 99522 84550",
   location: "Ramanathapuram, India",
   linkedin: "https://www.linkedin.com/in/kavi-k-41ab8224b",
+  github: "https://github.com/kavi-react", // TODO: update with your real GitHub URL
   portfolio: "kavi-dev-portfolio.vercel.app",
   bio: "Frontend Engineer with 4+ years of experience independently architecting and shipping 12+ production-grade applications across ERP, healthcare, e-commerce, and advertising. Proven ability to own full development cycles — from system design and UI architecture to deployment and performance optimization. Deep expertise in React, Next.js, TypeScript, React Native, and Electron.js.",
   awards: ["Elite Developer Certificate", "Best Teamwork Award"],
