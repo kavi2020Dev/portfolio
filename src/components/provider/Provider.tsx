@@ -1,15 +1,19 @@
 import React from 'react'
 import Header from '../shared/Header'
+import ScrollProgress from '../shared/ScrollProgress'
+import CursorGlow from '../shared/CursorGlow'
 
 interface ProviderSetupProps {
- children:React.ReactNode    
+  children: React.ReactNode
 }
 
-const ProviderSetup = ({children}:ProviderSetupProps) => {
+const ProviderSetup = ({ children }: ProviderSetupProps) => {
   return (
     <div>
-     <Header/>   
-     {children}    
+      <ScrollProgress />
+      <CursorGlow />
+      <Header />
+      {children}
     </div>
   )
 }

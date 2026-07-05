@@ -70,7 +70,7 @@ const SideMenu = ({ open, setOpen, activeSection = '' }: SideMenuProps) => {
                     }`}
                   >
                     {isActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 shadow-[0_0_6px_oklch(0.65_0.2_145)]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 shadow-[0_0_6px_oklch(0.6_0.2_255)]" />
                     )}
                     {!isActive && <span className="w-1.5 h-1.5 shrink-0" />}
                     {nav.name}

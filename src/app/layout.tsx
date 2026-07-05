@@ -15,9 +15,9 @@ const manRope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Kavi K — Frontend Developer",
+  title: "Kavi K — Frontend Engineer",
   description:
-    "Frontend Engineer with 4+ years building scalable web, mobile, and desktop apps with React, Next.js, TypeScript, React Native, Electron.js, and Node.js.",
+    "Frontend Engineer with 4+ years independently architecting and shipping 12+ production-grade applications with React, Next.js, TypeScript, React Native, Electron.js, and Node.js.",
 }
 
 export default function RootLayout({

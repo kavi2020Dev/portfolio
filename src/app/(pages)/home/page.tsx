@@ -1,8 +1,8 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
-import { STATS } from '@/lib/data'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { STATS, PERSONAL_INFO } from '@/lib/data'
+import { ArrowRight, ArrowUpRight, Mail, MapPin } from 'lucide-react'
 import { CountUp } from '@/components/ui/CountUp'
 
 const HeroCanvas = dynamic(() => import('@/components/three/HeroCanvas'), { ssr: false })
@@ -19,11 +19,22 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
 
+      {/* Drifting aurora blobs */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="animate-aurora absolute -top-20 left-1/4 w-125 h-125 rounded-full bg-primary/20 blur-[120px]" />
+        <div className="animate-aurora-slow absolute top-1/3 right-1/5 w-120 h-120 rounded-full bg-secondary/18 blur-[120px]" />
+        <div className="animate-aurora absolute bottom-0 left-1/3 w-100 h-100 rounded-full bg-chart-3/15 blur-[110px]" style={{ animationDelay: '-8s' }} />
+      </div>
+
+      {/* Fading grid overlay */}
+      <div className="absolute inset-0 z-0 hero-grid pointer-events-none" />
+
+      {/* Three.js particle scene */}
       <HeroCanvas />
-      <div className="absolute inset-0 z-1 dot-grid opacity-[0.18] pointer-events-none" />
+
+      {/* Soft radial spotlight behind the name */}
       <div className="absolute inset-0 z-1 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/7 blur-[130px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-secondary/5 blur-[60px]" />
+        <div className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-100 rounded-full bg-[radial-gradient(ellipse_at_center,oklch(1_0_0/0.9),transparent_70%)]" />
       </div>
 
       {/* ── Main content ── */}
@@ -41,12 +52,32 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.18, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading font-black text-[5.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[10rem] text-foreground leading-[0.88] tracking-tighter mb-6 select-none"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.08, delayChildren: 0.18 } },
+            }}
+            className="font-heading font-black text-[5.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[10rem] text-foreground leading-[0.88] tracking-tighter mb-6 select-none flex justify-center"
           >
-            KAVI K
+            {'KAVI K'.split('').map((char, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 80, rotateX: -90 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    rotateX: 0,
+                    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                  },
+                }}
+                className={`inline-block ${char === ' ' ? 'w-8 md:w-12' : ''} hover:text-primary transition-colors duration-300`}
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                {char === ' ' ? ' ' : char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           <motion.h2
@@ -70,26 +101,56 @@ export default function HeroSection() {
             Building scalable web, mobile &amp; desktop products that ship.
           </motion.p>
 
+          {/* Primary actions */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.52, duration: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-4 mb-12"
+            className="flex flex-wrap items-center justify-center gap-3 mb-6"
           >
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3.5 rounded-full font-medium transition-all glow-primary-sm hover:glow-primary text-sm"
+              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-2xl font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
             >
               View Projects
-              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 border border-border/80 hover:border-primary/50 bg-card/30 backdrop-blur-sm text-foreground hover:text-primary px-8 py-3.5 rounded-full font-medium transition-all text-sm"
+              className="group inline-flex items-center gap-2 bg-card border border-border hover:border-primary/40 text-foreground px-8 py-4 rounded-2xl font-semibold text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
             >
-              Hire Me
-              <ExternalLink size={14} />
+              Let&apos;s Talk
+              <ArrowUpRight size={16} className="text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
+          </motion.div>
+
+          {/* Social links + location */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.58, duration: 0.6 }}
+            className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-12"
+          >
+            <a
+              href={PERSONAL_INFO.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary bg-card/60 border border-border/70 hover:border-primary/40 px-4 py-2 rounded-full transition-all"
+            >
+              LinkedIn
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+            <a
+              href={`mailto:${PERSONAL_INFO.email}`}
+              className="group inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary bg-card/60 border border-border/70 hover:border-primary/40 px-4 py-2 rounded-full transition-all"
+            >
+              <Mail size={12} />
+              Email
+            </a>
+            <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground px-2 py-2">
+              <MapPin size={12} className="text-primary" />
+              {PERSONAL_INFO.location}
+            </span>
           </motion.div>
 
           <motion.div

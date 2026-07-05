@@ -24,20 +24,20 @@ export default function AboutOrb() {
 
     // Central icosahedron
     const icoGeo = new THREE.IcosahedronGeometry(1.3, 1)
-    const icoMat = new THREE.MeshBasicMaterial({ color: 0x4ade80, wireframe: true, transparent: true, opacity: 0.38 })
+    const icoMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.38 })
     const ico = new THREE.Mesh(icoGeo, icoMat)
     scene.add(ico)
 
     // Inner glowing sphere
     const sGeo = new THREE.SphereGeometry(0.85, 12, 12)
-    const sMat = new THREE.MeshBasicMaterial({ color: 0x86efac, wireframe: true, transparent: true, opacity: 0.16 })
+    const sMat = new THREE.MeshBasicMaterial({ color: 0x60a5fa, wireframe: true, transparent: true, opacity: 0.3 })
     const sphere = new THREE.Mesh(sGeo, sMat)
     scene.add(sphere)
 
     // Orbiting ring 1
     const r1 = new THREE.Mesh(
       new THREE.TorusGeometry(2.1, 0.009, 8, 90),
-      new THREE.MeshBasicMaterial({ color: 0x84cc16, transparent: true, opacity: 0.55 })
+      new THREE.MeshBasicMaterial({ color: 0x60a5fa, transparent: true, opacity: 0.55 })
     )
     r1.rotation.x = Math.PI / 3
     scene.add(r1)
@@ -45,7 +45,7 @@ export default function AboutOrb() {
     // Orbiting ring 2
     const r2 = new THREE.Mesh(
       new THREE.TorusGeometry(2.75, 0.007, 8, 110),
-      new THREE.MeshBasicMaterial({ color: 0x4ade80, transparent: true, opacity: 0.32 })
+      new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.32 })
     )
     r2.rotation.x = Math.PI / 6
     r2.rotation.y = Math.PI / 3
@@ -54,7 +54,7 @@ export default function AboutOrb() {
     // Orbiting ring 3 (cyan accent)
     const r3 = new THREE.Mesh(
       new THREE.TorusGeometry(3.3, 0.005, 8, 120),
-      new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.18 })
+      new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.32 })
     )
     r3.rotation.y = Math.PI / 2.5
     scene.add(r3)
@@ -66,7 +66,7 @@ export default function AboutOrb() {
       const dotMesh = new THREE.Mesh(
         new THREE.SphereGeometry(size, 6, 6),
         new THREE.MeshBasicMaterial({
-          color: Math.random() > 0.5 ? 0x84cc16 : 0x4ade80,
+          color: Math.random() > 0.5 ? 0x60a5fa : 0x3b82f6,
           transparent: true,
           opacity: 0.6 + Math.random() * 0.4,
         })

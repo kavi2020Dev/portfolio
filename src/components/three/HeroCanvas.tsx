@@ -24,26 +24,26 @@ export default function HeroCanvas() {
     mount.appendChild(renderer.domElement)
 
     // ── Particle field ──
-    const COUNT = 1400
+    const COUNT = 700
     const pos = new Float32Array(COUNT * 3)
     const col = new Float32Array(COUNT * 3)
     for (let i = 0; i < COUNT; i++) {
-      pos[i * 3]     = (Math.random() - 0.5) * 28
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 28
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 28
+      pos[i * 3]     = (Math.random() - 0.5) * 26
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 26
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 26
       const t = Math.random()
-      col[i * 3]     = 0.1 + t * 0.3
-      col[i * 3 + 1] = 0.55 + t * 0.45
-      col[i * 3 + 2] = 0.05 + t * 0.1
+      col[i * 3]     = 0.12 + t * 0.14   // low red
+      col[i * 3 + 1] = 0.32 + t * 0.28   // mid green
+      col[i * 3 + 2] = 0.75 + t * 0.22   // strong blue
     }
     const pGeo = new THREE.BufferGeometry()
     pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
     pGeo.setAttribute('color', new THREE.BufferAttribute(col, 3))
     const pMat = new THREE.PointsMaterial({
-      size: 0.065,
+      size: 0.05,
       vertexColors: true,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.65,
       sizeAttenuation: true,
     })
     const particles = new THREE.Points(pGeo, pMat)
@@ -52,10 +52,10 @@ export default function HeroCanvas() {
     // ── Central wireframe icosahedron ──
     const icoGeo = new THREE.IcosahedronGeometry(1.6, 1)
     const icoMat = new THREE.MeshBasicMaterial({
-      color: 0x4ade80,
+      color: 0x3b82f6,
       wireframe: true,
       transparent: true,
-      opacity: 0.22,
+      opacity: 0.32,
     })
     const ico = new THREE.Mesh(icoGeo, icoMat)
     scene.add(ico)
@@ -63,10 +63,10 @@ export default function HeroCanvas() {
     // ── Inner glowing sphere ──
     const sGeo = new THREE.SphereGeometry(0.9, 12, 12)
     const sMat = new THREE.MeshBasicMaterial({
-      color: 0x22d3ee,
+      color: 0x38bdf8,
       wireframe: true,
       transparent: true,
-      opacity: 0.12,
+      opacity: 0.2,
     })
     const sphere = new THREE.Mesh(sGeo, sMat)
     scene.add(sphere)
@@ -74,7 +74,7 @@ export default function HeroCanvas() {
     // ── Orbiting torus 1 ──
     const t1Geo = new THREE.TorusGeometry(2.8, 0.007, 8, 110)
     const t1Mat = new THREE.MeshBasicMaterial({
-      color: 0x84cc16,
+      color: 0x60a5fa,
       transparent: true,
       opacity: 0.35,
     })
@@ -85,9 +85,9 @@ export default function HeroCanvas() {
     // ── Orbiting torus 2 ──
     const t2Geo = new THREE.TorusGeometry(3.8, 0.005, 8, 130)
     const t2Mat = new THREE.MeshBasicMaterial({
-      color: 0x4ade80,
+      color: 0x3b82f6,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.28,
     })
     const torus2 = new THREE.Mesh(t2Geo, t2Mat)
     torus2.rotation.x = Math.PI / 6

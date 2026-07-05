@@ -81,7 +81,7 @@ export default function Service() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ delay: index * 0.06, duration: 0.5 }}
-                className={`group relative bg-card border border-border rounded-2xl p-6 overflow-hidden hover:border-primary/30 hover:shadow-[0_0_35px_oklch(0.65_0.2_145/0.08)] transition-all duration-300 cursor-default ${
+                className={`group relative bg-card border border-border rounded-2xl p-6 overflow-hidden hover:border-primary/30 hover:shadow-[0_0_35px_oklch(0.6_0.2_255/0.08)] transition-all duration-300 cursor-default ${
                   index === 0 ? 'sm:col-span-2 lg:col-span-1' : ''
                 }`}
               >
@@ -95,7 +95,7 @@ export default function Service() {
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-5">
-                    <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 group-hover:shadow-[0_0_14px_oklch(0.65_0.2_145/0.2)] transition-all">
+                    <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 group-hover:shadow-[0_0_14px_oklch(0.6_0.2_255/0.2)] transition-all">
                       <Icon size={18} className="text-primary" />
                     </div>
                     <motion.div

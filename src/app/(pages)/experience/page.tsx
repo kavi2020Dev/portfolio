@@ -78,12 +78,12 @@ export default function Experience() {
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.15 + 0.5, type: 'spring', stiffness: 380, damping: 18 }}
-                  className="absolute inset-0 rounded-full bg-primary border-4 border-background shadow-[0_0_16px_oklch(0.65_0.2_145/0.75)]"
+                  className="absolute inset-0 rounded-full bg-primary border-4 border-background shadow-[0_0_16px_oklch(0.6_0.2_255/0.75)]"
                 />
               </div>
 
               {/* Card */}
-              <div className="flex-1 bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-[0_0_40px_oklch(0.65_0.2_145/0.07)] transition-all group">
+              <div className="flex-1 bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-[0_0_40px_oklch(0.6_0.2_255/0.07)] transition-all group">
 
                 {/* Card top bar */}
                 <div className="px-6 pt-6 pb-5 border-b border-border/60">

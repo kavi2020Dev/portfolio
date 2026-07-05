@@ -46,50 +46,50 @@
   --radius-4xl:  calc(var(--radius) + 16px);
 }
 
-/* ── Dark-first design ── */
+/* ── Light design · Electric Blue ── */
 :root {
   --radius: 0.625rem;
 
-  --background:           oklch(0.06 0.012 240);
-  --foreground:           oklch(0.96 0.005 240);
+  --background:           oklch(0.985 0.005 250);
+  --foreground:           oklch(0.22 0.03 260);
 
-  --card:                 oklch(0.1 0.01 240);
-  --card-foreground:      oklch(0.96 0.005 240);
+  --card:                 oklch(1 0 0);
+  --card-foreground:      oklch(0.22 0.03 260);
 
-  --popover:              oklch(0.1 0.01 240);
-  --popover-foreground:   oklch(0.96 0.005 240);
+  --popover:              oklch(1 0 0);
+  --popover-foreground:   oklch(0.22 0.03 260);
 
-  --primary:              oklch(0.65 0.2 145);
-  --primary-foreground:   oklch(0.06 0 0);
+  --primary:              oklch(0.55 0.22 260);
+  --primary-foreground:   oklch(0.99 0 0);
 
-  --secondary:            oklch(0.82 0.17 85);
-  --secondary-foreground: oklch(0.06 0 0);
+  --secondary:            oklch(0.62 0.16 235);
+  --secondary-foreground: oklch(0.99 0 0);
 
-  --muted:                oklch(0.13 0.01 240);
-  --muted-foreground:     oklch(0.55 0 0);
+  --muted:                oklch(0.965 0.008 250);
+  --muted-foreground:     oklch(0.5 0.03 258);
 
-  --accent:               oklch(0.13 0.01 240);
-  --accent-foreground:    oklch(0.96 0 0);
+  --accent:               oklch(0.95 0.012 255);
+  --accent-foreground:    oklch(0.22 0.03 260);
 
-  --destructive:          oklch(0.65 0.22 27);
-  --border:               oklch(0.2 0.01 240);
-  --input:                oklch(0.2 0.01 240);
-  --ring:                 oklch(0.65 0.2 145);
+  --destructive:          oklch(0.58 0.22 27);
+  --border:               oklch(0.9 0.012 255);
+  --input:                oklch(0.9 0.012 255);
+  --ring:                 oklch(0.55 0.22 260);
 
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --chart-1: oklch(0.55 0.22 260);
+  --chart-2: oklch(0.62 0.16 235);
+  --chart-3: oklch(0.6 0.18 285);
+  --chart-4: oklch(0.65 0.15 210);
+  --chart-5: oklch(0.58 0.2 300);
 
-  --sidebar:                    oklch(0.1 0.01 240);
-  --sidebar-foreground:         oklch(0.96 0.005 240);
-  --sidebar-primary:            oklch(0.65 0.2 145);
-  --sidebar-primary-foreground: oklch(0.06 0 0);
-  --sidebar-accent:             oklch(0.13 0.01 240);
-  --sidebar-accent-foreground:  oklch(0.96 0.005 240);
-  --sidebar-border:             oklch(0.2 0.01 240);
-  --sidebar-ring:               oklch(0.65 0.2 145);
+  --sidebar:                    oklch(1 0 0);
+  --sidebar-foreground:         oklch(0.22 0.03 260);
+  --sidebar-primary:            oklch(0.55 0.22 260);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent:             oklch(0.95 0.012 255);
+  --sidebar-accent-foreground:  oklch(0.22 0.03 260);
+  --sidebar-border:             oklch(0.9 0.012 255);
+  --sidebar-ring:               oklch(0.55 0.22 260);
 }
 
 @layer base {
@@ -116,25 +116,25 @@
 
 /* Glow utilities */
 .glow-primary {
-  box-shadow: 0 0 20px oklch(0.65 0.2 145 / 0.25), 0 0 40px oklch(0.65 0.2 145 / 0.1);
+  box-shadow: 0 0 20px oklch(0.6 0.2 255 / 0.3), 0 0 40px oklch(0.6 0.2 255 / 0.12);
 }
 .glow-primary-sm {
-  box-shadow: 0 0 12px oklch(0.65 0.2 145 / 0.2);
+  box-shadow: 0 0 12px oklch(0.6 0.2 255 / 0.25);
 }
 .text-glow {
-  text-shadow: 0 0 20px oklch(0.65 0.2 145 / 0.4);
+  text-shadow: 0 0 22px oklch(0.55 0.22 260 / 0.25);
 }
 
 /* Dot grid background texture */
 .dot-grid {
-  background-image: radial-gradient(circle, oklch(0.28 0.01 240 / 0.7) 1px, transparent 1px);
+  background-image: radial-gradient(circle, oklch(0.55 0.06 258 / 0.5) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
 /* Gradient border utility */
 .gradient-border {
   background: linear-gradient(var(--card), var(--card)) padding-box,
-    linear-gradient(135deg, oklch(0.65 0.2 145), oklch(0.82 0.17 85)) border-box;
+    linear-gradient(135deg, oklch(0.6 0.2 255), oklch(0.78 0.13 230)) border-box;
   border: 1px solid transparent;
 }
 
@@ -148,4 +148,29 @@
 }
 .animate-ticker:hover {
   animation-play-state: paused;
+}
+
+/* ── Modern hero background ── */
+
+/* Fading grid overlay */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, oklch(0.55 0.08 258 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.55 0.08 258 / 0.07) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 42%, black 40%, transparent 78%);
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 42%, black 40%, transparent 78%);
+}
+
+/* Drifting aurora blobs */
+@keyframes aurora {
+  0%,  100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(5%, -4%) scale(1.1); }
+  66%       { transform: translate(-4%, 4%) scale(0.94); }
+}
+.animate-aurora {
+  animation: aurora 20s ease-in-out infinite;
+}
+.animate-aurora-slow {
+  animation: aurora 28s ease-in-out infinite reverse;
 }

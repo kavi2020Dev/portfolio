@@ -128,7 +128,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group bg-card border border-border rounded-2xl p-5 text-center hover:border-primary/30 hover:shadow-[0_0_25px_oklch(0.65_0.2_145/0.07)] transition-all"
+              className="group bg-card border border-border rounded-2xl p-5 text-center hover:border-primary/30 hover:shadow-[0_0_25px_oklch(0.6_0.2_255/0.07)] transition-all"
             >
               <p className="font-heading font-black text-3xl text-primary text-glow mb-1">{stat.value}</p>
               <p className="text-xs text-muted-foreground tracking-wide">{stat.label}</p>
@@ -159,7 +159,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.55 }}
-                className="group gradient-border rounded-2xl p-6 hover:shadow-[0_0_30px_oklch(0.65_0.2_145/0.08)] transition-all"
+                className="group gradient-border rounded-2xl p-6 hover:shadow-[0_0_30px_oklch(0.6_0.2_255/0.08)] transition-all"
               >
                 <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
                   <h4 className="font-heading font-bold text-base text-foreground">{edu.degree}</h4>

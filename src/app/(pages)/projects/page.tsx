@@ -5,11 +5,11 @@ import { ExternalLink, Layers } from 'lucide-react'
 
 const CATEGORY_COLORS: Record<string, string> = {
   'Web Platform': 'bg-primary/10 text-primary border-primary/25',
-  'Desktop App':  'bg-blue-500/10 text-blue-400 border-blue-500/25',
-  'Back Office':  'bg-purple-500/10 text-purple-400 border-purple-500/25',
-  'ERP System':   'bg-secondary/10 text-secondary border-secondary/25',
-  Healthcare:     'bg-cyan-500/10 text-cyan-400 border-cyan-500/25',
-  'E-Commerce':   'bg-yellow-500/10 text-yellow-400 border-yellow-500/25',
+  'Desktop App':  'bg-blue-500/10 text-blue-600 border-blue-500/25',
+  'Back Office':  'bg-purple-500/10 text-purple-600 border-purple-500/25',
+  'ERP System':   'bg-secondary/10 text-secondary border-secondary/30',
+  Healthcare:     'bg-cyan-500/10 text-cyan-600 border-cyan-500/25',
+  'E-Commerce':   'bg-amber-500/10 text-amber-600 border-amber-500/25',
 }
 
 export default function Projects() {
@@ -59,7 +59,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="group md:col-span-2 relative bg-card border border-border rounded-3xl overflow-hidden hover:border-primary/40 hover:shadow-[0_0_50px_oklch(0.65_0.2_145/0.1)] transition-all duration-400 cursor-default"
+            className="group md:col-span-2 relative bg-card border border-border rounded-3xl overflow-hidden hover:border-primary/40 hover:shadow-[0_0_50px_oklch(0.6_0.2_255/0.1)] transition-all duration-400 cursor-default"
           >
             {/* Top accent bar */}
             <div className="h-px w-full bg-linear-to-r from-transparent via-primary/60 to-transparent" />
@@ -77,7 +77,7 @@ export default function Projects() {
                 <ExternalLink size={15} className="text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
 
-              <div className="w-14 h-14 rounded-2xl bg-primary/12 border border-primary/25 flex items-center justify-center mb-5 group-hover:bg-primary/18 group-hover:shadow-[0_0_20px_oklch(0.65_0.2_145/0.25)] transition-all">
+              <div className="w-14 h-14 rounded-2xl bg-primary/12 border border-primary/25 flex items-center justify-center mb-5 group-hover:bg-primary/18 group-hover:shadow-[0_0_20px_oklch(0.6_0.2_255/0.25)] transition-all">
                 <span className="font-heading font-black text-primary text-2xl">{featured.title[0]}</span>
               </div>
 
@@ -147,7 +147,7 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ delay: index * 0.09, duration: 0.55 }}
-      className="group relative bg-card border border-border rounded-3xl overflow-hidden flex flex-col hover:border-primary/35 hover:shadow-[0_0_35px_oklch(0.65_0.2_145/0.08)] transition-all duration-300 cursor-default"
+      className="group relative bg-card border border-border rounded-3xl overflow-hidden flex flex-col hover:border-primary/35 hover:shadow-[0_0_35px_oklch(0.6_0.2_255/0.08)] transition-all duration-300 cursor-default"
     >
       {/* Top accent */}
       <div className="h-px w-0 bg-linear-to-r from-transparent via-primary to-transparent group-hover:w-full transition-all duration-500" />
@@ -160,7 +160,7 @@ function ProjectCard({
           <ExternalLink size={13} className="text-muted-foreground group-hover:text-primary transition-colors" />
         </div>
 
-        <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_14px_oklch(0.65_0.2_145/0.2)] transition-all">
+        <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_14px_oklch(0.6_0.2_255/0.2)] transition-all">
           <span className="font-heading font-black text-primary text-lg">{project.title[0]}</span>
         </div>
 

@@ -118,7 +118,7 @@ export default function Contact() {
                 href={href}
                 target={href?.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-card border border-border rounded-2xl px-5 py-4 hover:border-primary/35 hover:shadow-[0_0_20px_oklch(0.65_0.2_145/0.06)] transition-all group"
+                className="flex items-center gap-4 bg-card border border-border rounded-2xl px-5 py-4 hover:border-primary/35 hover:shadow-[0_0_20px_oklch(0.6_0.2_255/0.06)] transition-all group"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
                   <Icon size={16} className="text-primary" />
@@ -163,7 +163,7 @@ export default function Contact() {
                   name="name"
                   required
                   placeholder="Your name"
-                  className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.65_0.2_145/0.1)] transition-all"
+                  className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.6_0.2_255/0.1)] transition-all"
                 />
               </div>
               <div>
@@ -173,7 +173,7 @@ export default function Contact() {
                   name="email"
                   required
                   placeholder="your@email.com"
-                  className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.65_0.2_145/0.1)] transition-all"
+                  className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.6_0.2_255/0.1)] transition-all"
                 />
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                 type="text"
                 name="subject"
                 placeholder="Project discussion"
-                className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.65_0.2_145/0.1)] transition-all"
+                className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.6_0.2_255/0.1)] transition-all"
               />
             </div>
 
@@ -195,7 +195,7 @@ export default function Contact() {
                 name="message"
                 required
                 placeholder="Tell me about your project..."
-                className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.65_0.2_145/0.1)] transition-all resize-none"
+                className="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_oklch(0.6_0.2_255/0.1)] transition-all resize-none"
               />
             </div>
 

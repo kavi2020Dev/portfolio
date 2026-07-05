@@ -40,7 +40,7 @@ export default function SkillsNetwork() {
       const dot = new THREE.Mesh(
         new THREE.SphereGeometry(size, 8, 8),
         new THREE.MeshBasicMaterial({
-          color: isAccent ? 0x84cc16 : 0x4ade80,
+          color: isAccent ? 0x60a5fa : 0x3b82f6,
           transparent: true,
           opacity: 0.65 + Math.random() * 0.35,
         })
@@ -50,7 +50,7 @@ export default function SkillsNetwork() {
     }
 
     // Build edges between nearby nodes
-    const edgeMat = new THREE.LineBasicMaterial({ color: 0x4ade80, transparent: true, opacity: 0.1 })
+    const edgeMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.22 })
     for (let i = 0; i < nodeCount; i++) {
       for (let j = i + 1; j < nodeCount; j++) {
         const dist = positions[i].distanceTo(positions[j])

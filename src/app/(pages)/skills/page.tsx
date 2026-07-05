@@ -103,9 +103,9 @@ export default function Skills() {
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.05 }}
                         transition={{ delay: catIndex * 0.07 + i * 0.045, duration: 0.38 }}
-                        className="group flex items-center gap-1.5 bg-background/70 backdrop-blur-sm border border-border hover:border-primary/45 hover:text-primary hover:bg-primary/6 hover:shadow-[0_0_12px_oklch(0.65_0.2_145/0.15)] transition-all px-3.5 py-2 rounded-xl text-sm text-foreground cursor-default"
+                        className="group flex items-center gap-1.5 bg-background/70 backdrop-blur-sm border border-border hover:border-primary/45 hover:text-primary hover:bg-primary/6 hover:shadow-[0_0_12px_oklch(0.6_0.2_255/0.15)] transition-all px-3.5 py-2 rounded-xl text-sm text-foreground cursor-default"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary group-hover:shadow-[0_0_6px_oklch(0.65_0.2_145)] transition-all shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary group-hover:shadow-[0_0_6px_oklch(0.6_0.2_255)] transition-all shrink-0" />
                         {skill}
                       </motion.span>
                     ))}

@@ -40,7 +40,7 @@ const Header = () => {
           animate="visible"
           className="fixed top-0 left-0 right-0 z-50 px-4 pt-4"
         >
-          <div className="max-w-6xl mx-auto bg-card/75 backdrop-blur-2xl border border-border/60 rounded-2xl px-5 py-3 flex justify-between items-center shadow-[0_4px_32px_oklch(0_0_0/0.5),inset_0_1px_0_oklch(1_0_0/0.04)]">
+          <div className="max-w-6xl mx-auto bg-card/80 backdrop-blur-2xl border border-border/70 rounded-2xl px-5 py-3 flex justify-between items-center shadow-[0_8px_30px_oklch(0.55_0.22_260/0.1)]">
 
             {/* Logo */}
             <Link href="#home" className="flex items-center gap-2.5 group">
